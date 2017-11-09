@@ -4,7 +4,7 @@
 First credit goes to Silke V at codepen.io name "silkine" [http://www.silkevoigts.de/].
 Original source code can be found here: https://codepen.io/silkine/pen/jldif
 
-![](./img/newspaper-hugo-subtheme.png)
+![](./static/img/newspaper-hugo-subtheme.png)
 
 I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
 So I got interested in finding an HTML format that gave an old traditional newspaper style
