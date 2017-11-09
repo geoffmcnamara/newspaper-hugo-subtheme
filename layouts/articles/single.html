@@ -1,0 +1,26 @@
+<!--
+DEBUG: 
+/home/geoffm/dev/www/cos.tst/layouts/articles/single.html
+-->
+
+{{ partial "np-hdr.html" . }}
+
+<div class="npsingle" >
+
+<div id="np-single-head" style="text-align:center;">
+<span class="hl">{{ .Title }}</span>
+<span class="subhl">{{ .Params.author }} - {{ dateFormat "2006-01-02" .Params.date }}</span>
+</div> <!-- np-single-head -->
+
+<div id="np-single-img" style="display:block;overflow:hidden;">
+{{ if .Params.image }}
+<img style="display:block;border:solid 1px;align:center;margin-left:30%;margin-right:30%;" src="{{ .Site.BaseURL}}{{ .Params.image }}">
+{{ end }}
+</div> <!-- np-single-img -->
+
+<br>
+{{ .Content }}
+</div> <!-- npsingle -->
+
+{{ partial "np-cols-ftr.html" . }}
+{{ partial "np-ftr.html" . }}

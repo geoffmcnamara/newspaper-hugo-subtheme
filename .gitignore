@@ -1,0 +1,4 @@
+*.sh
+*.tar
+config.toml
+themes/*

@@ -1,0 +1,26 @@
+<!--
+DEBUG:
+/home/geoffm/dev/www/cos.tst/layouts/partials/np-morebox.html
+-->
+</div>
+<div class="np-morebox">
+<div class="heading">Past Articles</div>
+<ul>
+{{ range after 5 .Data.Pages }}
+<li>
+<a href={{ .URL  }}>{{ .Title }} </a>
+<br>
+{{ if .Params.subtitle }}
+..... Subtitle: {{ .Params.subtitle }}
+<br> 
+{{ end }}
+{{ if .Params.author }}
+..... Author: {{ .Params.author }} 
+<br> 
+{{ end }}
+..... Date: {{ dateFormat "2006-01-02" .Params.date }}
+<br>
+</li>
+</ul>
+{{ end }}
+</div>

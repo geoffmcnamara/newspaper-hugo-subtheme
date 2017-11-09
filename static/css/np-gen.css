@@ -1,0 +1,428 @@
+body{
+    font-family: 'Droid Serif', serif;
+    font-size: 14px;
+    color: #2f2f2f;
+    background-color: #f9f7f1;
+    //background-image: url("/img/old_wallpapers_012.jpg");
+    background-size: 100% 100%;
+    background-image: url("/img/np.jpg");
+}
+img,video{
+  height: auto;
+  max-width: 45%;
+  float: right;
+  display: block;
+}
+header{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 65px;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 55px;
+    margin-bottom: 20px;
+}
+
+.head{
+    text-align: center;
+    position: relative;
+}
+.headerobjectswrapper{
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 3px 12px 3px; /* top right bottom left */
+}
+.subhead{
+    text-transform: uppercase;
+    border-top: 2px solid #2f2f2f;
+    border-bottom: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
+}
+.weatherforcastbox{
+    position: relative;
+    width: 12%;
+    left: 10px;
+    border: 3px double #2f2f2f;
+    padding: 10px 15px 5px 15px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0 50px 20px -360px;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.content{
+    font-size: 0;
+    line-height: 0;
+    word-spacing: -.31em;
+    display: inline-block;
+    margin: 30px 2% 0 2%;
+}
+
+.collumns{
+}
+.collumn{
+    font-size: 14px;
+    line-height: 20px;
+    width: 17.5%;
+    display: inline-block;
+    padding: 0 1% 0 1%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    transition: all .7s;
+}
+.collumn + .collumn { 
+  border-left: 1px solid #2f2f2f;
+}
+/* headline default=Playfair serif */
+.collumn .headline{
+    text-align: center;
+    line-height: normal;
+    font-family: 'Playfair Display', serif;
+    display: block;
+    margin: 0 auto;
+}
+/* hl1 42px Philospopher sans-serif */ 
+.collumn .headline.hl1{
+    font-weight: 400;
+    font-size: 42px;
+    font-family: 'Philosopher', sans-serif;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+/* hl2 36px default italic */
+.collumn .headline.hl2{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+/* hl3 30px default */
+.collumn .headline.hl3{
+    font-weight: 700;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    padding: 10px 0 10px 0;
+}
+/* hl4 28px default top/bottom lined */
+.collumn .headline.hl4{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl4:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.hl4:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 13px;
+    display: block;
+    margin: 0 auto;
+}
+/* hl5 24px Architects Daughter top/bottom lined */
+.collumn .headline.hl5{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 24px;
+    font-family: 'Architects Daughter';
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl5:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.hl5:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 13px;
+    display: block;
+    margin: 0 auto;
+}
+
+/****** subhl ******/
+/* subhl1 18px Patrick Hand cursive lined?*/
+.collumn .headline.subhl1{
+    font-weight: 400;
+    font-size: 18px;
+    font-family: 'Patrick Hand', cursive;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.subhl1:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.subhl1:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+}
+/* subhl2 12px default top/bottom lined */
+.collumn .headline.subhl2{
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.subhl2:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.subhl2:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+}
+/* subhl3 12px Architects Daughter cursive */
+.collumn .headline.subhl3{
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Architects Daughter', cursive;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 0 10px 0;
+}
+/* subhl4 12px default */
+.collumn .headline.subhl4{
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+/* subhl5 12px Architects Daughter lined */
+.collumn .headline.subhl5{
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Architects Daughter', cursive;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.subhl5:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.subhl5:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+}
+/* subhl6 12px default */
+.collumn .headline.subhl6{
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+
+.collumn .citation{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    line-height: 44px;
+    /*font-style: italic;*/
+    text-align: center;
+    font-weight: 400;
+    display: block;
+    margin: 40px 0 40px 0;
+    font-feature-settings: "liga", "dlig";
+}
+.collumn .citation:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 16px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .citation:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 16px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .figure {
+	  margin: 0 0 20px;
+}
+.collumn .figcaption{
+	font-style: italic;
+	font-size: 12px;
+}
+
+.npsingle{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  /*border-left: 1px solid #2f2f2f;
+  border-right: 1px solid #2f2f2f;*/
+  padding: 15px 15px 5px 15px; /* top right bottom left */ 
+ 
+}
+
+.npsingle .hl {
+  text-align: center;
+  font-size: 24px;
+  padding: 10px 10px 10px 10px; /* top right bottom left */ 
+  margin: 10px 10px 10px 10px;
+}
+.npsingle .subhl {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Architects Daughter', cursive;
+  padding: 10px 15px 10px 10px; /* top right bottom left */ 
+  margin: 10px 10px 10px 10px;
+}
+.npsingle .subhl:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+}
+.npsingle .subhl:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.media {
+    -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+    filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+    mix-blend-mode: multiply;
+    width: 100%;
+}
+/*________________________________________________________________________________________________________________________________*/
+/*MEDIAQUERIES*/
+@media only all and (max-width: 1300px) {
+    .weatherforcastbox{
+        display: none;
+    }
+}
+@media only all and (max-width: 1200px) {
+    .collumn{
+        width: 31%;
+    }
+}
+    @media only all and (max-width: 900px) {
+    .collumn{
+        width: 47%;
+    }
+}
+@media only all and (max-width: 600px) {
+    .collumn{
+        width: 100%;
+    }
+	.collumn + .collumn {
+				border-left: none;
+      	border-bottom: 1px solid #2f2f2f;
+	}
+    header{
+        max-width: 320px;
+        font-size: 60px;
+        line-height: 54px;
+        overflow: hidden;
+    }
+}
+
+.np-footer{
+   text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    //font-family: 'Patrick Hand', cursive;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.np-footer:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100%;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.np-footer:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100%;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.np-morebox{
+    //width: 400px;
+    //width: 40%;
+    //height: 100px;
+    max-width: 300px;
+    border: 2px solid #555;
+    box-sizing: border-box;
+    //float: center;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+  text-align: left;
+}
+.np-morebox .heading{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+.np-morebox .heading:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+ } 
+

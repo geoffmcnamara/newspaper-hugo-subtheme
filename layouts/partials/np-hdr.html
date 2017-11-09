@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- see np-ftr.html for javascripts -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>{{ .Title }}</title>
+<!-- styles -->
+<link href="/css/np-gen.css" rel="stylesheet">
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Patrick+Hand|Philosopher" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>
+</head>
+
+<body>
+<div class="head">
+<div class="headerobjectswrapper">
+
+<div class="weatherforcastbox">
+{{ partial "np-weather.html" . }}
+</div> <!-- end div weatherforcast -->
+
+{{ partial "np-nav.html" . }}
+
+<header>
+{{ with .Site.GetPage "section" "articles" }} 
+{{ .Params.nptitle }}
+{{ end }}
+</header>
+</div> <!-- end div headerobjectwrapper -->
+
+<div class="subhead">
+{{ with .Site.GetPage "section" "articles" }} 
+{{ .Params.city }}, {{ .Params.state }} - {{ dateFormat "2006-01-02" .Lastmod }}
+{{ end }}
+</div> <!-- end div subhead -->
+
+</div> <!-- end div head -->
+<!-- EOF -->

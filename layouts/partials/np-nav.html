@@ -1,0 +1,39 @@
+<script type="text/javascript" src="/js/np-nav.js"></script>
+<link href="/css/np-nav.css" rel="stylesheet">
+
+
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<ul class="sidebar-menu">
+{{ $currentNode := . }}
+{{ range .Site.Menus.main }}
+{{ if .HasChildren }}
+<li class="sub-menu{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+<!--
+<a href="javascript:;" class="">
+-->
+{{ .Pre }}
+<span>[{{ .Name }}]</span>
+<span class="menu-arrow arrow_carrot-right"></span>
+</a>
+<ul class="sub">
+{{ range .Children }}
+<li {{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}"> [{{ .Name }}] </a> </li>
+{{ end }}
+</ul>
+{{else}}
+<li style="list-style:none;">
+<a href="{{.URL}}">
+{{ .Pre }}
+<span>{{ .Name }}</span>
+</a>
+{{end}}
+</li>
+{{end}}
+</ul>
+</div>
+<!--
+<span style="float:right;font-size:25px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
+-->
+<span style="float:right;font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+

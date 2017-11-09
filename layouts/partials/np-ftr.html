@@ -1,0 +1,27 @@
+<!-- scripts -->
+<!--
+Put jquery first - it is needed by others
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+<!--
+<script type="text/javascript" src="{{"js/jquery.js" | relURL}}"></script>
+<script type="text/javascript" src="{{"js/custom.js" | relURL}}"></script>
+-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+<script type="text/javascript" src="{{"js/np-weather.js" | relURL}}"></script>
+
+<!-- footer -->
+<footer class="np-footer">
+<div>
+<span>
+{{ if .Site.Copyright }}
+{{ .Site.Copyright | markdownify}} - {{ now.Format "2006" }}
+{{ else }}
+Copyright (c) {{ now.Format "2006" }}, <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+{{ end }}
+</span>
+</div>
+</footer>
+
+</body>
+</html>

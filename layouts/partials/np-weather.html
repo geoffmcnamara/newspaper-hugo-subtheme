@@ -1,0 +1,25 @@
+<!-- Docs at http://http://simpleweatherjs.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+<div id="weather"></div>
+<script>
+// Docs at http://simpleweatherjs.com
+$(document).ready(function() {
+		$.simpleWeather({
+location: '{{ .Params.city }}, {{ .Params.state }}',
+woeid: '',
+unit: 'f',
+success: function(weather) {
+html = 'Currently: '+weather.currently+'<br> Temp: '+weather.temp+'&deg;'+weather.units.temp+'<br>Wind: '+weather.wind.speed+' mph '+weather.wind.direction;
+$("#weather").html(html);
+},
+error: function(error) {
+$("#weather").html('<p>'+error+'</p>');
+}
+});
+		});
+</script>
+
+
+
+
