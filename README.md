@@ -21,7 +21,7 @@ posts to the newsletter subtheme should be created in this ./content/articles/ d
 files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
 pulled from ./archtypes/articles.md.
 
-This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.
+This project then becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.
 
 <!--more-->
 
@@ -66,8 +66,52 @@ menu format is in this project is similar to (but not as good as) the casper the
 system used here is the standard hugo menu.main method for generating menu entries. These entries come from either
 your config.toml file and/or markdown files that have this included in the front matter
 
+Your base build directory will have a config.toml file and if entries such as these below exist they will be included in the
+newspaper subtheme menu.
+
 ```
+# config.toml
+# ... examples only
+[[menu.main]]
+  name = "About"
+  weight = 130
+  identifier = "about"
+  url = "//page/about"
+
+[[menu.main]]
+  name = "Contact"
+  weight = 140
+  identifier = "contact"
+  url = "//page/contact"
+
+[[menu.main]]
+  name = "Links"
+  weight = 150
+  identifier = "links"
+  url = "//page/links"
+# ...
+```
+
+As a default this next line is included in the ./content/articles/_index.md which is used by normally used
+by hugo when building out the ./layouts/articles/list.html page but this subtheme also grabs the front matter
+values for the ./layouts/articles/single.html builds as well using the .GetPage method. The next line is included
+in the ./content/articles/_index.md to add the Title "Newspaper" to the "main" menu.
+
+```
+# This line exists in ./content/articles/_index.md to populate 
+# the main menu with the Title value also declared in this file
 menu = "main"
+```
+
+Also the template file for the footer (./layouts/partial/np-ftr.html) will use additional entries in the base 
+config.toml file to populate the copyright footer.
+
+```
+# config.toml
+# ... example only
+Title= "Your Company"
+Copyright = "Copyright &copy; yourdomain.com"  
+# ...
 ```
 
 All the section pages will include the Title (Newspaper) from ./content/articles/_index.md becuase 
@@ -94,4 +138,4 @@ Lots of improvements can be made to this and I encourage you to make and changes
 contained within. Please let me know of any suggestions or improvements.
 
 geoff.mcnamara@gmail.com
-
+<script src="https://gist.github.com/geoffmcnamara/bc0fe7d23e3a63c0da6544ee995b5d2e.js"></script>
