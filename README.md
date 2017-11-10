@@ -120,8 +120,18 @@ it also includes the above menu = "main" line.
 ### Installation:
 
 * build out a standard hugo site with any theme you prefer.
-* from the base hugo working directory for that site extract these project files
+* from the base hugo working directory for that site extract these project files or
+  add these files by git clone ie:
+```
+cd to your base site hugo dir
+git clone https://github.com/geoffmcnamara/newspaper-hugo-subtheme
+```
 * edit the ./content/articles/_index.md file to change the general variables used in this subtheme
+* build your hugo files
+```
+hugo serve -v
+```
+* use your browser and go to localhost:1313/articles/
 
 ### Notes:
 
