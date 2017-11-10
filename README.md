@@ -123,11 +123,14 @@ it also includes the above menu = "main" line.
 * from the base hugo working directory for that site extract these project files or
   add these files by git clone ie:
 ```
-cd to your base site hugo dir
+cd /tmp/
 git clone https://github.com/geoffmcnamara/newspaper-hugo-subtheme
+cd newspaper-hugo-subtheme
+rsync -av --exclude=".*" --exclude="README.md" ./ /your/hugo/website-base/  # this will exclude the .git directory and the README.md
+cd /your/hugo/website-base/
 ```
 * edit the ./content/articles/_index.md file to change the general variables used in this subtheme
-* build your hugo files
+* build your hugo files with:
 ```
 hugo serve -v
 ```
