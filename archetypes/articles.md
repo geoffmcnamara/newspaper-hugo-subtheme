@@ -1,6 +1,6 @@
 +++
-date = "2014-07-11T10:54:24+02:00"
-title = ""
+date = "{{ . Date }}"
+title = "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle = ""
 author = ""
 hl = 2     # values of 1 - 6 are respected in css/np-gen.css
