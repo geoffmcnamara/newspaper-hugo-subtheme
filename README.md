@@ -92,8 +92,8 @@ newspaper subtheme menu.
 # ...
 ```
 
-As a default this next line is included in the ./content/articles/_index.md which is used by normally used
-by hugo when building out the ./layouts/articles/list.html page but this subtheme also grabs the front matter
+As a default this next line is included in the ./content/articles/_index.md which is normally used by hugo 
+when building out the ./layouts/articles/list.html page but this subtheme also grabs the front matter
 values for the ./layouts/articles/single.html builds as well using the .GetPage method. The next line is included
 in the ./content/articles/_index.md to add the Title "Newspaper" to the "main" menu.
 
