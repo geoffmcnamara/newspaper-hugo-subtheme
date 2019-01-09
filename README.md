@@ -47,7 +47,7 @@ It might be useful to examine the directoy file structure for this project:
 |     |     +-----np-nav.html
 |     |     +-----np-weather.html
 |     +-----section # hugo uses this directory to find "section" specific "list" templates
-|     |     +-----articles.html # hugo uses this template to combine postings into a newletter front page
+|     |     +-----articles.html # hugo uses this (optional - not included here) template to combine postings into a newletter front page
 +-----static
 |     +-----css # needed newspaper styles - (can be shared with other themes of course)
 |     |     +-----np-gen.css # newspaper general styles
