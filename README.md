@@ -1,5 +1,14 @@
 # Newpaper Hugo Subtheme
+# vim: set syntax=none nospell:
 ### newspaper-hugo-subtheme
+
+
+```
+cd (to this project directory)
+mkdir layouts/_default
+cp layouts/articles/list.html layouts/_default/
+hugo -v server 
+```
 
 First credit goes to Silke V at codepen.io name "silkine" [http://www.silkevoigts.de/].
 Original source code can be found here: https://codepen.io/silkine/pen/jldif
@@ -13,7 +22,7 @@ the hugo cms system to be the easiest most portable static web building applicat
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke's newspaper css into a hugo "section".
 
-This project is a drop in offering to any existing hugo themed structure which will produce
+This project is (almost) a drop in offering to any existing hugo themed structure which will produce
 a newsletter format in an "article(s)" hugo section. A user only needs to change the title, city,
 and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
 Hugo uses this file natively to discover section (in this case "articles") specific data. All
@@ -48,6 +57,8 @@ It might be useful to examine the directoy file structure for this project:
 |     |     +-----np-weather.html
 |     +-----section # hugo uses this directory to find "section" specific "list" templates
 |     |     +-----articles.html # hugo uses this (optional - not included here) template to combine postings into a newletter front page
+|     +-----_default # BE CAREFUL - do NOT let this overwrite your current _default dir unless you want this as a free-standing theme
+|     |     +-----list.html  # this should ONLY BE USED in a free-standing theme situation
 +-----static
 |     +-----css # needed newspaper styles - (can be shared with other themes of course)
 |     |     +-----np-gen.css # newspaper general styles
@@ -93,7 +104,7 @@ newspaper subtheme menu.
 ```
 
 As a default this next line is included in the ./content/articles/_index.md which is normally used by hugo 
-when building out the ./layouts/articles/list.html page but this subtheme also grabs the front matter
+when building out the ./layouts/articles/list.html page but this sub-theme also grabs the front matter
 values for the ./layouts/articles/single.html builds as well using the .GetPage method. The next line is included
 in the ./content/articles/_index.md to add the Title "Newspaper" to the "main" menu.
 
@@ -126,10 +137,13 @@ it also includes the above menu = "main" line.
 cd /tmp/
 git clone https://github.com/geoffmcnamara/newspaper-hugo-subtheme
 cd newspaper-hugo-subtheme
-rsync -av --exclude=".*" --exclude="README.md" ./ /your/hugo/website-base/  # this will exclude the .git directory and the README.md
+rsync -av --exclude=".*" --exclude="README.md" --exclude=config.toml --exclude=layouts/_default  ./ /your/hugo/website-base/  
+# the above will exclude the .git directory, the README.md, the config.toml file, and the layouts/_default dir and config.toml file
+#   (should only be included if you want the _default  a free-standing theme (not a sub-theme).
 cd /your/hugo/website-base/
 ```
 * edit the ./content/articles/_index.md file to change the general variables used in this subtheme
+
 * build your hugo files with:
 ```
 hugo serve -v
@@ -147,8 +161,74 @@ hugo serve -v
   - the image variable in the article front matter is used on single article pages and the style is less than ideal.
 
 
-Lots of improvements can be made to this and I encourage you to make and changes you want. Only request is that you retain the credits
+Lots of improvements can be made to this and I encourage you to make any changes you want. My only request is that you retain the credits
 contained within. Please let me know of any suggestions or improvements.
+
+
+## To make this a stand-alone hugo theme:
+Example adds a contact page to the menu
+
+```
+mkdir layouts/_default  # if it doesn't exist
+cp layouts/articles/list.html layouts/_default/  # if it doesn't exist
+mkdir content/pages  # if it doesn't exist
+cp -r layouts/articles layouts/pages  # if it doesn't exist
+vi content/pages/contact.md # see details below
+vi config.toml #  add the menu.main section as shown below details
+```
+
+Here is a summary of the above:
+made a directory layouts/_default
+Copied layouts/articles/list.html to layouts/_default
+made a directory content/pages
+copied entire dir of layouts/articles to layouts/pages
+Created an contact.md file with proper front matter in content/pages dir similar to this:
+
+```
++++
+comments = true
+date = "2019-01-19 09:04:40"
+draft = false
++++
+
+## My Contact Page
+
+My content here
+
+<!--more-->
+```
+
+Added this to config.toml
+```
+[[menu.main]]
+    name = "Contact"
+    weight = 140
+    identifier = "contact"
+    url = "//page/contact"
+``` 
+
+My config.toml looks like this - it also has added another page (About - create a content/pages/about.md with the proper front matter) to the menu:
+
+```
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+[[menu.main]]
+    name = "About"
+    weight = 130
+    identifier = "about"
+    url = "//page/about"
+  
+[[menu.main]]
+    name = "Contact"
+    weight = 140
+    identifier = "contact"
+    url = "//page/contact"
+
+```
+
+Ran hugo server
+
 
 geoff.mcnamara@gmail.com
 <script src="https://gist.github.com/geoffmcnamara/bc0fe7d23e3a63c0da6544ee995b5d2e.js"></script>
