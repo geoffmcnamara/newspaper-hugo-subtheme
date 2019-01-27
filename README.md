@@ -157,7 +157,7 @@ hugo serve -v
 * Different headline styles and subheadline styles can be used for each listed article 
   - examples of these can be seen in the example posts
   - these are set in front matter variables for each post - see this article front matter with hl = 3 and subhl = 2
-  - there are six headline styles and 6 subheadline styles - see ./static/css/np-gen.css for more info on these styles.
+  - there are five headline styles and 6 subheadline styles - see ./static/css/np-gen.css for more info on these styles.
   - the image variable in the article front matter is used on single article pages and the style is less than ideal.
 
 
