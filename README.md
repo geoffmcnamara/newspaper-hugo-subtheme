@@ -1,5 +1,5 @@
 # Newpaper Hugo Subtheme
-# vim: set syntax=none nospell:
+
 ### newspaper-hugo-subtheme
 
 
@@ -232,3 +232,4 @@ Ran hugo server
 
 geoff.mcnamara@gmail.com
 <script src="https://gist.github.com/geoffmcnamara/bc0fe7d23e3a63c0da6544ee995b5d2e.js"></script>
+vim: set syntax=none nospell:
