@@ -1,0 +1,54 @@
+<!--
+{{ printf "%#v" . }}
+DEBUG: 
+/home/geoffm/dev/www/cos.tst/layouts/section/articles.html
+<br>
+-->
+{{ partial "np-hdr.html" . }}
+
+{{ range first 5 .Data.Pages }}
+<div class="collumn">
+<div class="head">
+{{ if isset .Params "hl" }}
+<span class="headline hl{{ .Params.hl }}">
+{{ else }}
+<span class="headline hl1">
+{{ end }}
+
+{{ .Title }}
+</span><p>
+
+{{ if isset .Params "subhl" }}
+<span class="headline subhl{{ .Params.subhl }}"> 
+{{ else }}
+<span class="headline subhl1">
+{{ end }}
+
+{{ if isset .Params "subtitle" }}
+{{ .Params.subtitle }}
+<br>
+{{ end }}
+
+{{ if isset .Params "author" }}
+by: {{ .Params.author }} 
+<br>
+{{ dateFormat "2006-01-02" .Params.date }}
+{{ end }}
+
+</span>
+</p>
+</div> <!-- end div head -->
+{{ .Summary }}
+<br>
+<center>[<a href="{{ .URL }}">Full article</a>]</center>
+</div> <!-- end div collumn -->
+{{ end }}
+</span>
+</p>
+
+{{ partial "np-morebox.html" . }}
+
+<!--
+-->
+
+{{ partial "np-ftr.html" . }}
